@@ -1,0 +1,214 @@
+@import "reset";
+@import "fonts";
+@import "btn";
+@import "icon";
+@import "mixins";
+
+// STYLE
+html, body {
+  height: 100%;
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  min-width: 320px;
+  margin: 0 auto;
+  font-family: "SegoeUI", sans-serif;
+
+  @include responsiveFont(18px, 8px);
+
+  font-weight: 400;
+  background-color: #fff;
+  overflow-x: hidden;
+}
+
+a, button, input, select, option, textarea {
+  outline: none;
+  border: 0;
+}
+
+button::-moz-focus-inner {
+  border: 0;
+}
+
+input[type='checkbox'] {
+  margin: 0;
+}
+
+input[type='file'] {
+  display: none;
+}
+
+a img {
+  border: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+.container {
+  max-width: 960px;
+  margin: 0 auto;
+}
+
+.bevel-container-wrap {
+  position: absolute;
+  width: 100%;
+  left: 0;
+  height: 4vw;
+  overflow: hidden;
+  z-index: 1;
+
+  &.bottom {
+    bottom: 0;
+  }
+
+  &.top {
+    top: 0;
+  }
+}
+
+.bevel-container.bottom {
+  border: 4vw solid transparent;
+  border-left: 100vw solid #fff;
+  border-bottom: 0.2vw solid #fff;
+}
+
+.bevel-container.bottom-right {
+  border: 4vw solid transparent;
+  border-right: 100vw solid #fff;
+  border-bottom: 0.2vw solid #fff;
+}
+
+.bevel-container.bottom-left {
+  border: 4vw solid transparent;
+  border-right: 100vw solid #fff;
+  border-top: 0.2vw solid #fff;
+}
+
+.bevel-container.top {
+  border: 4vw solid transparent;
+  border-right: 100vw solid #fff;
+  border-top: 0.2vw solid #fff;
+}
+
+.bevel-container.top-left {
+  border: 4vw solid transparent;
+  border-left: 100vw solid #fff;
+  border-bottom: 0.2vw solid #fff;
+}
+
+@media only screen and (max-device-width: 768px) {
+  section.top .top-container .text-container h1 {
+    font-size: 18px;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  section.top .top-container .btn-container button {
+    height: 60px;
+    font-size: 16px;
+    background-size: 20px 10px;
+  }
+
+  section.main .info-container {
+    padding-left: 0;
+    text-align: center;
+  }
+
+  .main-btn {
+    height: 30px;
+    line-height: 30px;
+  }
+
+  section.main .info-container .btn-container {
+    margin-top: 50px;
+  }
+
+  section.main .img-foot-container {
+    float: none;
+    margin: 0 auto;
+    width: 200px;
+    height: calc(100% - 397px);
+    background-position: 0 22%;
+  }
+
+  .main-btn:after {
+    height: 61%;
+    bottom: -2px;
+    right: -4px;
+    width: 1px;
+  }
+
+  .main-btn:before {
+    height: 61%;
+    top: -2px;
+    right: -4px;
+    width: 1px;
+  }
+
+  section.press-about-us .container,
+  section.contacts .container,
+  section.trade .container,
+  section.info .container {
+    padding: 0 5%;
+  }
+
+  .international-advisers .advisers-container .wrapper {
+    width: 100%;
+  }
+
+  section.info .how-it-works-container .btn-container {
+    width: 100%;
+    padding: 30px 20px 30px 0;
+  }
+
+  .arrow-grey-btn {
+    padding: 0 5px;
+  }
+
+  .arrow-grey-btn, .main-btn {
+    font-size: 12px;
+  }
+
+  section.info .items-wrapper .next-btn,
+  .bevel-container.top,
+  section.trade .bevel-container.bottom-left,
+  .bevel-container.bottom-right,
+  .js-partners-next-btn,
+  .bevel-container,
+  section.info .items-wrapper .prev-btn,
+  .international-advisers .partners-wrapper {
+    display: none;
+  }
+
+  .pagination-container div {
+    &.active .text {
+      opacity: 0;
+    }
+  }
+
+  section.info .how-it-works-container .btn-container .question-icon {
+    right: 0;
+    margin-bottom: 32px;
+  }
+
+  section.main .info-container .btn-container_input {
+    font-size: 15px;
+    height: 30px;
+  }
+}
+
+.hidden {
+  display: none !important;
+}
